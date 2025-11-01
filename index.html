@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Proficiency Exam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="/submit_exam" method="POST" id="exam-form">
+        <input type="hidden" name="_subject" value="English Proficiency Exam Submission">
+        <input type="hidden" name="target_email" value="info@academy-uk.net">
+        
+        
+        
+        <input type="hidden" name="Exam Title" value="English Proficiency Exam">
+    <div class="container" id="exam-container">
+        <!-- Instructions Page -->
+        <section id="instructions-page" class="section active">
+            <h2>Exam Instructions - English Proficiency Exam</h2>
+            <div class="section-info">
+                <p><strong>Welcome to the English Proficiency Exam. Please read the following instructions carefully before you begin:</strong></p>
+            </div>
+
+            <div class="student-info-group">
+                        <label for="student-name">Student Name:</label>
+                        <input type="text" id="student-name" name="student_name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="student-info-group">
+                        <label for="student-email">Student Email:</label>
+                        <input type="email" id="student-email" name="student_email" required placeholder="Enter your email address">
+                    </div>
+<div class="instructions-list">
+                <h3>General Instructions</h3>
+                <ul>
+                    <li><strong>Exam Duration:</strong> 60 minutes. Your answers will be submitted automatically when the time runs out.</li>
+                    <li><strong>Navigation:</strong> You can navigate between exam sections (Listening, Reading, Writing, Speaking) using the buttons in the navigation bar.</li>
+                    <li><strong>Scoring:</strong> Listening and Reading sections are scored automatically. Writing and Speaking sections require manual evaluation by an instructor.</li>
+                    <li><strong>Submission:</strong> When finished, click the <strong>"Submit Exam"</strong> button at the bottom. Your answers will be sent to your email address.</li>
+                    <li><strong>Alert:</strong> Once you click "Submit Exam," you will not be able to change your answers.</li>
+                </ul>
+
+                <h3>Section-Specific Instructions</h3>
+                <ul>
+                    <li><strong>Listening:</strong> The audio will play only once. Please listen carefully and write the required answers.</li>
+                    <li><strong>Reading:</strong> Read the text carefully and answer the multiple-choice and completion questions.</li>
+                    <li><strong>Writing:</strong> Your report must be a minimum of 150 words.</li>
+                    <li><strong>Speaking:</strong> You will need to record your answers using an external tool (like Vocaroo) and paste the audio link in the designated box.</li>
+                </ul>
+            </div>
+
+            <button id="start-exam-btn" class="submit-btn" style="background-color: #27ae60; margin-top: 30px;">Start Exam</button>
+        </section>
+        
+        <!-- Main Exam Content Wrapper -->
+        <div id="main-exam-content" style="display: none;">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-container"><img src="logo.png" alt="eAcademy-UK Logo" class="header-logo"></div><h1>English Proficiency Exam</h1>
+            <div class="timer-section">
+                <div class="timer" id="timer">60:00</div>
+                <p class="timer-label">Time Remaining</p>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="section-nav">
+            <button class="nav-btn active" data-section="section1">Section 1: Listening</button>
+            <button class="nav-btn" data-section="section2">Section 2: Reading</button>
+            <button class="nav-btn" data-section="section3">Section 3: Writing</button>
+            <button class="nav-btn" data-section="section4">Section 4: Speaking</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Section 1: Listening -->
+            <section id="section1" class="section active">
+                <h2>Section 1: Listening (10 minutes)</h2>
+                <div class="section-info">
+                    <p><strong>Instructions:</strong> Listen to the audio script below and answer the questions. The script will be read aloud once. Please read the script carefully as if you are listening to it.</p>
+                </div>
+
+                <div class="listening-script">
+                    <h3>Listening Audio: Booking a Dental Appointment</h3>
+                    <audio controls src="listening_audio.wav" style="width: 100%;"></audio>
+                    <p style="margin-top: 15px; font-style: italic;">Note: The audio should be played only once to simulate the test environment.</p>
+                </div>
+
+                <div class="questions-section">
+                    <h3>Questions (Form Completion - NO MORE THAN TWO WORDS AND/OR A NUMBER)</h3>
+                    
+                    <div class="question-group">
+                        <label for="q1">1. Patient's Name: Jane <input type="text" id="q1" class="answer-input" placeholder="Last name"></label>
+                    </div>
+
+                    <div class="question-group">
+                        <label for="q2">2. Phone Number: <input type="text" id="q2" class="answer-input" placeholder="Phone number"></label>
+                    </div>
+
+                    <div class="question-group">
+                        <label for="q3">3. Reason for Visit: <input type="text" id="q3" class="answer-input" placeholder="Reason"></label>
+                    </div>
+
+                    <div class="question-group">
+                        <label for="q4">4. Proposed Appointment: <input type="text" id="q4" class="answer-input" placeholder="Day"> at <input type="text" id="q5" class="answer-input" placeholder="Time"></label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Reading -->
+            <section id="section2" class="section">
+                <h2>Section 2: Reading (20 minutes)</h2>
+                <div class="section-info">
+                    <p><strong>Instructions:</strong> Read the text below and answer all the questions.</p>
+                </div>
+
+                <div class="reading-text">
+                    <h3>The Benefits of Walking</h3>
+                    <h4>Walking: The Simple Path to Health</h4>
+                    <p>Walking is one of the easiest and most accessible forms of exercise. You don't need special equipment, and you can do it almost anywhere. Experts recommend a minimum of 30 minutes of brisk walking most days of the week. This simple activity can have a profound impact on your physical and mental well-being.</p>
+                    <p>Physically, regular walking helps to strengthen your heart and improve blood circulation. It is an excellent way to manage your weight and can significantly reduce the risk of chronic diseases like type 2 diabetes and high blood pressure. Unlike running, walking is low-impact, meaning it is gentle on your joints and less likely to cause injuries.</p>
+                    <p>Mentally, a daily walk can be a great stress reliever. Spending time outdoors, even in a city park, can clear your mind and boost your mood. Many people find that walking helps them think clearly and solve problems. It is a natural way to increase your energy levels without relying on caffeine.</p>
+                    <p>In conclusion, incorporating a daily walk into your routine is a small change with huge health benefits. It is a simple, free, and effective way to lead a healthier, happier life.</p>
+                </div>
+
+                <div class="questions-section">
+                    <h3>Questions 1-5: Choose the correct answer (A, B, C, or D)</h3>
+                    
+                    <div class="question-group">
+                        <p><strong>1. What is the minimum recommended amount of walking for most days of the week?</strong></p>
+                        <label><input type="radio" name="r1" value="A"> A. One hour of light walking</label>
+                        <label><input type="radio" name="r1" value="B"> B. 30 minutes of brisk walking</label>
+                        <label><input type="radio" name="r1" value="C"> C. 15 minutes of running</label>
+                        <label><input type="radio" name="r1" value="D"> D. 60 minutes of slow walking</label>
+                    </div>
+
+                    <div class="question-group">
+                        <p><strong>2. What is one of the main physical benefits of regular walking mentioned in the text?</strong></p>
+                        <label><input type="radio" name="r2" value="A"> A. Building large muscles</label>
+                        <label><input type="radio" name="r2" value="B"> B. Strengthening the heart and improving blood circulation</label>
+                        <label><input type="radio" name="r2" value="C"> C. Curing Type 2 diabetes</label>
+                        <label><input type="radio" name="r2" value="D"> D. Increasing the need for caffeine</label>
+                    </div>
+
+                    <div class="question-group">
+                        <p><strong>3. What does it mean that walking is "low-impact"?</strong></p>
+                        <label><input type="radio" name="r3" value="A"> A. It does not require special equipment</label>
+                        <label><input type="radio" name="r3" value="B"> B. It is gentle on the joints and less likely to cause injuries</label>
+                        <label><input type="radio" name="r3" value="C"> C. It does not cause any strain on the joints</label>
+                        <label><input type="radio" name="r3" value="D"> D. It is only done indoors</label>
+                    </div>
+
+                    <div class="question-group">
+                        <p><strong>4. What mental benefit does walking provide?</strong></p>
+                        <label><input type="radio" name="r4" value="A"> A. Increased reliance on caffeine</label>
+                        <label><input type="radio" name="r4" value="B"> B. Helping to think clearly and relieve stress</label>
+                        <label><input type="radio" name="r4" value="C"> C. Increased risk of chronic diseases</label>
+                        <label><input type="radio" name="r4" value="D"> D. The need for special equipment</label>
+                    </div>
+
+                    <div class="question-group">
+                        <p><strong>5. What is the main conclusion of the text?</strong></p>
+                        <label><input type="radio" name="r5" value="A"> A. Walking is difficult and requires great effort.</label>
+                        <label><input type="radio" name="r5" value="B"> B. Walking is a small change with huge health benefits.</label>
+                        <label><input type="radio" name="r5" value="C"> C. Running is much better than walking.</label>
+                        <label><input type="radio" name="r5" value="D"> D. Walking is only beneficial for the elderly.</label>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">Questions 6-10: Complete the following sentences with ONE WORD from the text</h3>
+
+                    <div class="question-group">
+                        <label for="r6">6. Walking is one of the most <input type="text" id="r6" class="answer-input" placeholder="word"> forms of exercise.</label>
+                    </div>
+
+                    <div class="question-group">
+                        <label for="r7">7. Regular walking can be an excellent way to manage your <input type="text" id="r7" class="answer-input" placeholder="word">.</label>
+                    </div>
+
+                    <div class="question-group">
+                        <label for="r8">8. Walking is less likely to cause <input type="text" id="r8" class="answer-input" placeholder="word"> than running.</label>
+                    </div>
+
+                    <div class="question-group">
+                        <label for="r9">9. A daily walk can be a great <input type="text" id="r9" class="answer-input" placeholder="word"> reliever.</label>
+                    </div>
+
+                    <div class="question-group">
+                        <label for="r10">10. Walking is a <input type="text" id="r10" class="answer-input" placeholder="word"> way to increase your energy levels.</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Writing -->
+            <section id="section3" class="section">
+                <h2>Section 3: Writing (20 minutes)</h2>
+                <div class="section-info">
+                    <p><strong>Instructions:</strong> Write a report of at least 150 words based on the table below.</p>
+                </div>
+
+                <div class="writing-task">
+                    <h3>Task 1: Report Writing</h3>
+                    <p>The table below shows the number of students who chose three different subjects (Mathematics, Science, Arts) at a high school during the years 2024 and 2025. Summarize the information by selecting and reporting the main features, and make comparisons where relevant.</p>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Number of Students (2024)</th>
+                                <th>Number of Students (2025)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mathematics</td>
+                                <td>120</td>
+                                <td>150</td>
+                            </tr>
+                            <tr>
+                                <td>Science</td>
+                                <td>90</td>
+                                <td>85</td>
+                            </tr>
+                            <tr>
+                                <td>Arts</td>
+                                <td>60</td>
+                                <td>110</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="writing-input">
+                        <label for="writing-answer">Your Answer (minimum 150 words):</label>
+                        <textarea id="writing-answer" class="writing-textarea" placeholder="Write your report here..."></textarea>
+                        <div class="word-count">
+                            <span id="word-count-display">0</span> words
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Speaking -->
+            <section id="section4" class="section">
+                <h2>Section 4: Speaking (10 minutes)</h2>
+                <div class="section-info">
+                    <p><strong>Instructions:</strong> This section requires an audio recording. Please use an external online recording tool (such as <a href="https://vocaroo.com/" target="_blank">Vocaroo</a> or your phone's voice recorder) to record your answers. After recording, please get the shareable link for your audio file and paste it in the box below.</p>
+                    <p style="color: #e74c3c; font-weight: bold;">Note: The exam system cannot record audio directly.</p>
+                </div>
+
+                <div class="speaking-section">
+                    <h3>Part 1: General Questions (Home and City) - 4-5 minutes</h3>
+                    <p>Please record your answers to the following questions in one audio file:</p>
+                    <ul>
+                        <li>1. Do you live in an apartment or a house? Describe it a little for me.</li>
+                        <li>2. What is your favorite thing about your city?</li>
+                        <li>3. Is there anything you dislike about your city?</li>
+                        <li>4. Do you prefer living in the city or the countryside? Why?</li>
+                    </ul>
+
+                    <h3 style="margin-top: 30px;">Part 2: Topic Talk (Cue Card) - 3-4 minutes</h3>
+                    <p><strong>Question:</strong> Describe a book you read recently that you enjoyed. You should say:</p>
+                    <ul>
+                        <li>what the name of the book is and who the author is.</li>
+                        <li>how you found out about this book.</li>
+                        <li>what the book is about.</li>
+                        <li>and explain why you enjoyed reading it.</li>
+                    </ul>
+                    <p><em>You will have 1 minute to prepare and 1-2 minutes to speak. Record this part in the same audio file after Part 1.</em></p>
+                    
+                    <div class="question-group">
+                        <p><strong>Paste the Shareable Link to your Audio Recording here:</strong></p>
+                        <input type="url" id="speaking-link" class="answer-input" placeholder="e.g., https://drive.google.com/share/link">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer with Submit Button -->
+                </div> <!-- End of Main Exam Content Wrapper -->
+
+        <footer class="footer">
+            <button type="submit" class="submit-btn">Submit Exam</button>
+            <button id="review-btn" class="review-btn" style="display: none;">Review Results</button>
+        </footer>
+    </div>
+
+    </form>
+
+    <!-- Results Modal -->
+    <div id="results-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Exam Results</h2>
+            <div id="results-body"></div>
+            <button id="print-btn" class="print-btn">Print Results</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
