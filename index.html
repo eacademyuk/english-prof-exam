@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Proficiency Exam</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <form action="https://english-prof-exam.vercel.app/submit_exam" method="POST" id="exam-form">
+    <form action="/submit_exam" method="POST" id="exam-form">
         <input type="hidden" name="_subject" value="English Proficiency Exam Submission">
         <input type="hidden" name="target_email" value="info@academy-uk.net">
         
@@ -49,14 +49,14 @@
                 </ul>
             </div>
 
-            <button id="start-exam-btn" class="submit-btn" style="background-color: #27ae60; margin-top: 30px;">Start Exam</button>
+            <button id="start-exam-btn" type="button" class="submit-btn" disabled style="background-color: #27ae60; margin-top: 30px;">Start Exam</button>
         </section>
         
         <!-- Main Exam Content Wrapper -->
         <div id="main-exam-content" style="display: none;">
         <!-- Header -->
         <header class="header">
-            <div class="logo-container"><img src="logo.png" alt="eAcademy-UK Logo" class="header-logo"></div><h1>English Proficiency Exam</h1>
+            <div class="logo-container"><img src="/static/logo.png" alt="eAcademy-UK Logo" class="header-logo"></div><h1>English Proficiency Exam</h1>
             <div class="timer-section">
                 <div class="timer" id="timer">60:00</div>
                 <p class="timer-label">Time Remaining</p>
@@ -65,10 +65,10 @@
 
         <!-- Navigation Tabs -->
         <nav class="section-nav">
-            <button class="nav-btn active" data-section="section1">Section 1: Listening</button>
-            <button class="nav-btn" data-section="section2">Section 2: Reading</button>
-            <button class="nav-btn" data-section="section3">Section 3: Writing</button>
-            <button class="nav-btn" data-section="section4">Section 4: Speaking</button>
+            <button type="button" class="nav-btn active" data-section="section1">Section 1: Listening</button>
+            <button type="button" class="nav-btn" data-section="section2">Section 2: Reading</button>
+            <button type="button" class="nav-btn" data-section="section3">Section 3: Writing</button>
+            <button type="button" class="nav-btn" data-section="section4">Section 4: Speaking</button>
         </nav>
 
         <!-- Main Content -->
@@ -82,7 +82,7 @@
 
                 <div class="listening-script">
                     <h3>Listening Audio: Booking a Dental Appointment</h3>
-                    <audio controls src="listening_audio.wav" style="width: 100%;"></audio>
+                    <audio controls src="/static/listening_audio.wav" style="width: 100%;"></audio>
                     <p style="margin-top: 15px; font-style: italic;">Note: The audio should be played only once to simulate the test environment.</p>
                 </div>
 
@@ -90,19 +90,19 @@
                     <h3>Questions (Form Completion - NO MORE THAN TWO WORDS AND/OR A NUMBER)</h3>
                     
                     <div class="question-group">
-                        <label for="q1">1. Patient's Name: Jane <input type="text" id="q1" class="answer-input" placeholder="Last name"></label>
+                        <label for="q1">1. Patient's Name: Jane <input type="text" id="q1" name="q1" class="answer-input" placeholder="Last name"></label>
                     </div>
 
                     <div class="question-group">
-                        <label for="q2">2. Phone Number: <input type="text" id="q2" class="answer-input" placeholder="Phone number"></label>
+                        <label for="q2">2. Phone Number: <input type="text" id="q2" name="q2" class="answer-input" placeholder="Phone number"></label>
                     </div>
 
                     <div class="question-group">
-                        <label for="q3">3. Reason for Visit: <input type="text" id="q3" class="answer-input" placeholder="Reason"></label>
+                        <label for="q3">3. Reason for Visit: <input type="text" id="q3" name="q3" class="answer-input" placeholder="Reason"></label>
                     </div>
 
                     <div class="question-group">
-                        <label for="q4">4. Proposed Appointment: <input type="text" id="q4" class="answer-input" placeholder="Day"> at <input type="text" id="q5" class="answer-input" placeholder="Time"></label>
+                        <label for="q4">4. Proposed Appointment: <input type="text" id="q4" name="q4" class="answer-input" placeholder="Day"> at <input type="text" id="q5" name="q5" class="answer-input" placeholder="Time"></label>
                     </div>
                 </div>
             </section>
@@ -169,23 +169,23 @@
                     <h3 style="margin-top: 30px;">Questions 6-10: Complete the following sentences with ONE WORD from the text</h3>
 
                     <div class="question-group">
-                        <label for="r6">6. Walking is one of the most <input type="text" id="r6" class="answer-input" placeholder="word"> forms of exercise.</label>
+                        <label for="r6">6. Walking is one of the most <input type="text" id="r6" name="r6" class="answer-input" placeholder="word"> forms of exercise.</label>
                     </div>
 
                     <div class="question-group">
-                        <label for="r7">7. Regular walking can be an excellent way to manage your <input type="text" id="r7" class="answer-input" placeholder="word">.</label>
+                        <label for="r7">7. Regular walking can be an excellent way to manage your <input type="text" id="r7" name="r7" class="answer-input" placeholder="word">.</label>
                     </div>
 
                     <div class="question-group">
-                        <label for="r8">8. Walking is less likely to cause <input type="text" id="r8" class="answer-input" placeholder="word"> than running.</label>
+                        <label for="r8">8. Walking is less likely to cause <input type="text" id="r8" name="r8" class="answer-input" placeholder="word"> than running.</label>
                     </div>
 
                     <div class="question-group">
-                        <label for="r9">9. A daily walk can be a great <input type="text" id="r9" class="answer-input" placeholder="word"> reliever.</label>
+                        <label for="r9">9. A daily walk can be a great <input type="text" id="r9" name="r9" class="answer-input" placeholder="word"> reliever.</label>
                     </div>
 
                     <div class="question-group">
-                        <label for="r10">10. Walking is a <input type="text" id="r10" class="answer-input" placeholder="word"> way to increase your energy levels.</label>
+                        <label for="r10">10. Walking is a <input type="text" id="r10" name="r10" class="answer-input" placeholder="word"> way to increase your energy levels.</label>
                     </div>
                 </div>
             </section>
@@ -230,7 +230,7 @@
 
                     <div class="writing-input">
                         <label for="writing-answer">Your Answer (minimum 150 words):</label>
-                        <textarea id="writing-answer" class="writing-textarea" placeholder="Write your report here..."></textarea>
+                        <textarea id="writing-answer" name="writing_answer" class="writing-textarea" placeholder="Write your report here..."></textarea>
                         <div class="word-count">
                             <span id="word-count-display">0</span> words
                         </div>
@@ -268,7 +268,7 @@
                     
                     <div class="question-group">
                         <p><strong>Paste the Shareable Link to your Audio Recording here:</strong></p>
-                        <input type="url" id="speaking-link" class="answer-input" placeholder="e.g., https://drive.google.com/share/link">
+                        <input type="url" id="speaking-link" name="speaking_link" class="answer-input" placeholder="e.g., https://drive.google.com/share/link">
                     </div>
                 </div>
             </section>
@@ -278,8 +278,8 @@
                 </div> <!-- End of Main Exam Content Wrapper -->
 
         <footer class="footer">
-            <button type="submit">Submit Exam</button>
-            <button id="review-btn" class="review-btn" style="display: none;">Review Results</button>
+            <button type="submit" class="submit-btn">Submit Exam</button>
+            <button type="button" id="review-btn" class="review-btn" style="display: none;">Review Results</button>
         </footer>
     </div>
 
@@ -295,6 +295,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>
