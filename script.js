@@ -46,6 +46,26 @@ function initializeInstructions() {
     const instructionsPage = document.getElementById('instructions-page');
     const mainContent = document.getElementById('main-exam-content');
 
+    // Enable Start button only when name and email are provided and email looks valid
+    const studentNameInput = document.getElementById('student-name');
+    const studentEmailInput = document.getElementById('student-email');
+
+    function isValidEmail(email) {
+        // simple email regex
+        return /^\S+@\S+\.\S+$/.test(email);
+    }
+
+    function validateStartButton() {
+        const nameValid = studentNameInput && studentNameInput.value.trim().length > 0;
+        const emailValid = studentEmailInput && isValidEmail(studentEmailInput.value.trim());
+        if (startBtn) startBtn.disabled = !(nameValid && emailValid);
+    }
+
+    if (studentNameInput) studentNameInput.addEventListener('input', validateStartButton);
+    if (studentEmailInput) studentEmailInput.addEventListener('input', validateStartButton);
+    // run once on load
+    validateStartButton();
+
     // Initially, only instructions page is active (done in HTML)
     
     startBtn.addEventListener('click', function() {
